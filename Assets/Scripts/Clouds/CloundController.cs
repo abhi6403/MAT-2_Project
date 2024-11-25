@@ -15,18 +15,22 @@ public class CloundController : MonoBehaviour
     }
     private void Update()
     {
-      var step = moveSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position,moveDown,step);
+        CloudMovement();
+        DestroyCloud();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void DestroyCloud()
     {
-        if (collision.gameObject.CompareTag("Destroy"))
+        if (transform.position.y == -9.0f)
         {
-            Debug.Log("getting called");
             Destroy(gameObject);
         }
     }
 
+    private void CloudMovement()
+    {
+        var step = moveSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, moveDown, step);
+    }
     
 }
