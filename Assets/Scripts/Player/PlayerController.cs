@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private int jumpForce;
+    [SerializeField]
+    private GameObject jetFlame;
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
@@ -65,8 +67,10 @@ public class PlayerController : MonoBehaviour
     private IEnumerator JetPower()
     {
         playerCollider.isTrigger = true;
+        jetFlame.SetActive(true);
         playerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
         yield return new WaitForSeconds(5);
+        jetFlame.SetActive(false);
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
         playerCollider.isTrigger = false;
     }
