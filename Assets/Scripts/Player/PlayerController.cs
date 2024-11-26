@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private int jumpForce;
     [SerializeField]
     private GameObject jetFlame;
+    [SerializeField]
+    private GameObject baseCloud;
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
@@ -22,6 +24,8 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         playerCollider = GetComponent<BoxCollider2D>();
+
+        StartCoroutine(DestroybaseCloud());
     }
 
     private void Update()
@@ -80,5 +84,11 @@ public class PlayerController : MonoBehaviour
         isShieldActive = true;
         yield return new WaitForSeconds(5);
         isShieldActive = false;
+    }
+
+    private IEnumerator DestroybaseCloud()
+    {
+        yield return new WaitForSeconds(8);
+        baseCloud.SetActive(false);
     }
 }
