@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private GameObject jetFlame;
     [SerializeField]
     private GameObject baseCloud;
+    [SerializeField]
+    private ScoreController scoreController;
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
@@ -88,7 +90,13 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator DestroybaseCloud()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(10);
+       // playerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         baseCloud.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    { 
+            scoreController.IncreaseScore(1);
     }
 }
