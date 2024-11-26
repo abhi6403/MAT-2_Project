@@ -7,7 +7,7 @@ public class CloundController : MonoBehaviour
 {
     [SerializeField]
     private float moveSpeed;
-    
+    public BoxCollider2D cloudTrigger;
 
     Vector3 moveDown;
 
@@ -15,8 +15,8 @@ public class CloundController : MonoBehaviour
     private void Start()
     {
         moveDown = new Vector3(-1,-9.0f,0.0f);
-        
-        
+        //cloudTrigger = GetComponent<BoxCollider2D>();
+
     }
     private void Update()
     {
@@ -38,6 +38,9 @@ public class CloundController : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, moveDown, step);
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        cloudTrigger.enabled = false;
+    }
 
 }

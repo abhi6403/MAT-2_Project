@@ -7,10 +7,12 @@ public class ObstacleScript : MonoBehaviour
 {
     public float moveSpeed;
     Vector3 moveRight;
+    
 
     private void Start()
     {
         moveRight = new Vector3(10.0f,transform.position.y,0.0f);
+        
     }
 
     private void Update()
@@ -31,4 +33,6 @@ public class ObstacleScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    
 }

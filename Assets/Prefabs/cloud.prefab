@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  scoreController: {fileID: 0}
+  cloudTrigger: {fileID: 7301554268572823052}
 --- !u!61 &7301554268572823052
 BoxCollider2D:
   m_ObjectHideFlags: 0
