@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private ScoreController scoreController;
     [SerializeField]
     private GameObject gameOver;
+    [SerializeField]
+    private GameObject scoreText;
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
@@ -41,31 +43,40 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Cloud"))
         {
+            SoundManager.Instance.Play(Sounds.PLAYERJUMP);
             playerRb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
             playerAnimator.SetBool("Jump", true);
         }
         else if (collision.gameObject.CompareTag("Jet"))
         {
+            SoundManager.Instance.Play(Sounds.POWERUP);
             Destroy(collision.gameObject);
             Debug.Log("getting called");
             StartCoroutine(JetPower());
         }
         else if(collision.gameObject.CompareTag("Shield") && isShieldActive == false)
         {
+            SoundManager.Instance.Play(Sounds.POWERUP);
             Destroy(collision.gameObject);
             Debug.Log("getting called");
             StartCoroutine(ShieldPower());
         }
         else if(collision.gameObject.CompareTag("Bullet") && isShieldActive == false)
         {
+            SoundManager.Instance.Play(Sounds.PLAYERDEATH);
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            scoreText.SetActive(false);
             gameOver.SetActive(true);
+            SoundManager.Instance.Play(Sounds.GAMEOVER);
             Time.timeScale = 0;
         }else if(collision.gameObject.CompareTag("Destroy"))
         {
+            SoundManager.Instance.Play(Sounds.PLAYERDEATH);
             Destroy(gameObject);
+            scoreText.SetActive(false);
             gameOver.gameObject.SetActive(true);
+            SoundManager.Instance.Play(Sounds.GAMEOVER);
             Time.timeScale = 0;
         }
         else
@@ -85,6 +96,7 @@ public class PlayerController : MonoBehaviour
         playerCollider.isTrigger = true;
         jetFlame.SetActive(true);
         playerRb.constraints = RigidbodyConstraints2D.FreezePositionY;
+        playerRb.AddForce(new Vector2(0, 3), ForceMode2D.Impulse);
         yield return new WaitForSeconds(5);
         jetFlame.SetActive(false);
         playerRb.constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -101,7 +113,6 @@ public class PlayerController : MonoBehaviour
     private IEnumerator DestroybaseCloud()
     {
         yield return new WaitForSeconds(10);
-       // playerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         baseCloud.SetActive(false);
     }
 

@@ -17,6 +17,7 @@ public class StartMenuController : MonoBehaviour
     {
         startButton.onClick.AddListener(StartButtonClick);
         exitButton.onClick.AddListener(ExitButtonClick);
+        SoundManager.Instance.PlayMusic(Sounds.MUSIC);
     }
 
     public void StartButtonClick()
