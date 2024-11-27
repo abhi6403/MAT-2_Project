@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     private GameObject baseCloud;
     [SerializeField]
     private ScoreController scoreController;
+    [SerializeField]
+    private GameObject gameOver;
 
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
@@ -27,6 +29,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         playerCollider = GetComponent<BoxCollider2D>();
 
+        Time.timeScale = 0;
         StartCoroutine(DestroybaseCloud());
     }
 
@@ -57,6 +60,13 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            gameOver.SetActive(true);
+            Time.timeScale = 0;
+        }else if(collision.gameObject.CompareTag("Destroy"))
+        {
+            Destroy(gameObject);
+            gameOver.gameObject.SetActive(true);
+            Time.timeScale = 0;
         }
         else
         {
