@@ -4,31 +4,38 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class StartMenuController : MonoBehaviour
+namespace UI
 {
-    public Button startButton;
-    public Button exitButton;
-    [SerializeField]
-    private GameObject startMenu;
-    [SerializeField] 
-    private GameObject scoreText;
-
-    public void Start()
+    namespace MainMenuController
     {
-        startButton.onClick.AddListener(StartButtonClick);
-        exitButton.onClick.AddListener(ExitButtonClick);
-        SoundManager.Instance.PlayMusic(Sounds.MUSIC);
-    }
+        public class StartMenuController : MonoBehaviour
+        {
+            public Button startButton;
+            public Button exitButton;
+            [SerializeField]
+            private GameObject startMenu;
+            [SerializeField] 
+            private GameObject scoreText;
 
-    public void StartButtonClick()
-    {
-        Time.timeScale = 1.0f;
-        scoreText.SetActive(true);
-        startMenu.SetActive(false);
-    }
+            public void Start()
+            {
+                startButton.onClick.AddListener(StartButtonClick);
+                exitButton.onClick.AddListener(ExitButtonClick);
+                SoundManager.Instance.PlayMusic(Sounds.MUSIC);
+            }
 
-    public void ExitButtonClick()
-    {
-        Application.Quit();
+            public void StartButtonClick()
+            {
+                Time.timeScale = 1.0f;
+                scoreText.SetActive(true);
+                startMenu.SetActive(false);
+            }
+
+            public void ExitButtonClick()
+            {
+                Application.Quit();
+            }
+        }
     }
 }
+

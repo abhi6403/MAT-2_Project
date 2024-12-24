@@ -5,35 +5,39 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using TMPro;
 
-public class ScoreController : MonoBehaviour
+namespace Game
 {
-    public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI highScoreText;
-    public TextMeshProUGUI displayScore;
-    private int highScore;
-    private int score = 0;
-
-    public void Awake()
+    public class ScoreController : MonoBehaviour
     {
-            highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
-    }
+        public TextMeshProUGUI scoreText;
+        public TextMeshProUGUI highScoreText;
+        public TextMeshProUGUI displayScore;
+        private int highScore;
+        private int score = 0;
 
-    public void Update()
-    {
-        if(score > highScore)
+        public void Awake()
         {
-            highScore = score;
-            PlayerPrefs.SetInt("HighScore", highScore);
+            highScoreText.text = PlayerPrefs.GetInt("HighScore").ToString();
+        }
+
+        public void Update()
+        {
+            if(score > highScore)
+            {
+                highScore = score;
+                PlayerPrefs.SetInt("HighScore", highScore);
+            }
+        }
+        public void IncreaseScore(int increment)
+        {
+            score += increment;
+            RefreshUI();
+        }
+        private void RefreshUI()
+        {
+            scoreText.text = "Score : " + score;
+            displayScore.text = "Your Score : " + score;
         }
     }
-    public void IncreaseScore(int increment)
-    {
-        score += increment;
-        RefreshUI();
-    }
-    private void RefreshUI()
-    {
-        scoreText.text = "Score : " + score;
-        displayScore.text = "Your Score : " + score;
-    }
 }
+

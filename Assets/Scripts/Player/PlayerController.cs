@@ -1,8 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Player
+{
+    
+    public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private int jumpForce;
@@ -11,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject baseCloud;
     [SerializeField]
-    private ScoreController scoreController;
+    private Game.ScoreController scoreController;
     [SerializeField]
     private GameObject gameOver;
     [SerializeField]
@@ -119,3 +123,5 @@ public class PlayerController : MonoBehaviour
             scoreController.IncreaseScore(1);
     }
 }
+}
+
