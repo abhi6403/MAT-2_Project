@@ -285,7 +285,8 @@ GameObject:
   m_Component:
   - component: {fileID: 296002148}
   - component: {fileID: 296002147}
-  - component: {fileID: 296002146}
+  - component: {fileID: 296002149}
+  - component: {fileID: 296002150}
   m_Layer: 0
   m_Name: ItemSpawner
   m_TagString: Untagged
@@ -293,25 +294,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &296002146
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296002145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dcfe8a745795e7439d77804405a227a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minSpawnTime: 2
-  maxSpawnTime: 5
-  spawnBoundary: {fileID: 296002147}
-  itemsList:
-  - {fileID: 401932486988328485, guid: 1f39d9bb2e0e17f42a60981a1b3d988a, type: 3}
-  - {fileID: 5054651140117810517, guid: e4d17f9315f103f49b7a9a14754dafc6, type: 3}
-  - {fileID: 3950527341054941614, guid: 801a4a9752fc52544912cb352b6e3cde, type: 3}
 --- !u!61 &296002147
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -372,6 +354,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &296002149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296002145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4631881a33270534988d2f7934c2e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnTime: 2
+  maxSpawnTime: 5
+  spawnBoundary: {fileID: 296002147}
+  objectList:
+  - {fileID: 401932486988328485, guid: 1f39d9bb2e0e17f42a60981a1b3d988a, type: 3}
+  - {fileID: 5054651140117810517, guid: e4d17f9315f103f49b7a9a14754dafc6, type: 3}
+--- !u!114 &296002150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296002145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2d49418cc53ff43a5f8f730a2bf99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &302516811
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1006,8 @@ GameObject:
   m_Component:
   - component: {fileID: 822705744}
   - component: {fileID: 822705743}
-  - component: {fileID: 822705742}
+  - component: {fileID: 822705745}
+  - component: {fileID: 822705746}
   m_Layer: 0
   m_Name: CloudSpawner
   m_TagString: Untagged
@@ -1002,21 +1015,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &822705742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822705741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c720123e25dee7548a06ad08fed9e9ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnTime: 1.5
-  spawnBoundary: {fileID: 822705743}
-  cloudObject: {fileID: 7959724957269752974, guid: 377e0aa3b37655449904fbb337562112, type: 3}
 --- !u!61 &822705743
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1077,6 +1075,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &822705745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822705741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4631881a33270534988d2f7934c2e7c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSpawnTime: 1.5
+  maxSpawnTime: 1.5
+  spawnBoundary: {fileID: 822705743}
+  objectList:
+  - {fileID: 7959724957269752974, guid: 377e0aa3b37655449904fbb337562112, type: 3}
+--- !u!114 &822705746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822705741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c2d49418cc53ff43a5f8f730a2bf99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &862979292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,8 +1724,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1069892208}
-  - component: {fileID: 1069892207}
-  - component: {fileID: 1069892206}
+  - component: {fileID: 1069892209}
+  - component: {fileID: 1069892210}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -1706,42 +1733,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1069892206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069892205}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd4204a3550733d49ae642449a223cc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffect: {fileID: 1534207220}
-  soundMusic: {fileID: 1907229243}
-  Sounds:
-  - soundType: 0
-    soundClip: {fileID: 8300000, guid: 4ba12a35ef6cc774486c2ecb46ec09d6, type: 3}
-  - soundType: 1
-    soundClip: {fileID: 8300000, guid: 829e59bc6710c4045a634084e691f9f5, type: 3}
-  - soundType: 2
-    soundClip: {fileID: 8300000, guid: 7b1f5b264e7815c44a14d69662e7caff, type: 3}
-  - soundType: 3
-    soundClip: {fileID: 8300000, guid: 7879bb990d31ebc49b12d4125c2978cc, type: 3}
-  - soundType: 4
-    soundClip: {fileID: 8300000, guid: 7398a74ae30b2094dacb8ccbdc30a86a, type: 3}
-  - soundType: 5
-    soundClip: {fileID: 8300000, guid: 87a34ba59c4d66a4896968fa7417c0e8, type: 3}
-  isMute: 0
---- !u!81 &1069892207
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1069892205}
-  m_Enabled: 1
 --- !u!4 &1069892208
 Transform:
   m_ObjectHideFlags: 0
@@ -1759,6 +1750,42 @@ Transform:
   - {fileID: 1534207221}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1069892209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069892205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4204a3550733d49ae642449a223cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: {fileID: 1907229243}
+  soundMusic: {fileID: 1534207220}
+  Sounds:
+  - soundType: 0
+    soundClip: {fileID: 8300000, guid: 4ba12a35ef6cc774486c2ecb46ec09d6, type: 3}
+  - soundType: 1
+    soundClip: {fileID: 8300000, guid: 829e59bc6710c4045a634084e691f9f5, type: 3}
+  - soundType: 2
+    soundClip: {fileID: 8300000, guid: 7b1f5b264e7815c44a14d69662e7caff, type: 3}
+  - soundType: 3
+    soundClip: {fileID: 8300000, guid: 7879bb990d31ebc49b12d4125c2978cc, type: 3}
+  - soundType: 4
+    soundClip: {fileID: 8300000, guid: 7398a74ae30b2094dacb8ccbdc30a86a, type: 3}
+  - soundType: 5
+    soundClip: {fileID: 8300000, guid: 87a34ba59c4d66a4896968fa7417c0e8, type: 3}
+  isMute: 0
+--- !u!81 &1069892210
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069892205}
+  m_Enabled: 1
 --- !u!1 &1101187585
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,25 +4,29 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class GameOverController : MonoBehaviour
+namespace InfinityJumper.Game
 {
-    public Button restartButton;
-    public Button exitButton;
-
-    public void Start()
+    public class GameOverController : MonoBehaviour
     {
-        restartButton.onClick.AddListener(RestartButtonClick);
-        exitButton.onClick.AddListener(ExitButtonClick);
-    }
+        public Button restartButton;
+        public Button exitButton;
 
-    public void RestartButtonClick()
-    {
-        Time.timeScale = 1.0f;
-        SceneManager.LoadScene(0);
-    }
+        public void Start()
+        {
+            restartButton.onClick.AddListener(RestartButtonClick);
+            exitButton.onClick.AddListener(ExitButtonClick);
+        }
 
-    public void ExitButtonClick()
-    {
-        Application.Quit();
+        public void RestartButtonClick()
+        {
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene(0);
+        }
+
+        public void ExitButtonClick()
+        {
+            Application.Quit();
+        }
     }
 }
+

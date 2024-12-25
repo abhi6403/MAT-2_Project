@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4765161914941654390}
   - component: {fileID: 1407855850579555837}
   - component: {fileID: 7301554268572823052}
+  - component: {fileID: 6083024145961339161}
   m_Layer: 0
   m_Name: cloud
   m_TagString: Cloud
@@ -144,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26df0be174a2eda4680f880220369ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
   cloudTrigger: {fileID: 7301554268572823052}
 --- !u!61 &7301554268572823052
 BoxCollider2D:
@@ -191,3 +191,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 21.47248, y: 0.20279115}
   m_EdgeRadius: 0
+--- !u!114 &6083024145961339161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7959724957269752974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f198f4777c8fcf945b627cd3cf11abbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 2
+  moveDirection: {x: 0, y: -9, z: 0}
+  destroyPosition: {x: 0, y: -9, z: 0}
