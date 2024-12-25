@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-namespace Game
+namespace InfinityJumper.Game
 {
     public class GameOverController : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace Player
+namespace InfinityJumper.Player
 {
     
     public class PlayerController : MonoBehaviour
@@ -15,7 +15,7 @@ namespace Player
     [SerializeField]
     private GameObject baseCloud;
     [SerializeField]
-    private Game.ScoreController scoreController;
+    private InfinityJumper.Game.ScoreController scoreController;
     [SerializeField]
     private GameObject gameOver;
     [SerializeField]
@@ -43,7 +43,7 @@ namespace Player
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Cloud"))
+        if (collision.gameObject.CompareTag("Cloud") )
         {
             SoundManager.Instance.Play(Sounds.PLAYERJUMP);
             playerRb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);

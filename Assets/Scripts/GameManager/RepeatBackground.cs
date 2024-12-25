@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
 
-namespace UI
+namespace InfinityJumper.UI
 {
     namespace Background
     {

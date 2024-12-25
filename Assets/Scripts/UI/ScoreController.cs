@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using TMPro;
 
-namespace Game
+namespace InfinityJumper.Game
 {
     public class ScoreController : MonoBehaviour
     {

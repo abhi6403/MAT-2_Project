@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Item
+namespace InfinityJumper.Game
 {
-    public class itemSpawner : MonoBehaviour
+    public class ObjectSpawner : MonoBehaviour
     {
         [SerializeField] private float minSpawnTime;
         [SerializeField] private float maxSpawnTime;
 
         public BoxCollider2D spawnBoundary;
 
-        public GameObject[] itemsList;
+        public GameObject[] objectList;
 
         bool isSpawning = false;
 
@@ -29,17 +29,19 @@ namespace Item
             yield return new WaitForSeconds(seconds);
             Vector3 pos = GetRandomPosition();
 
-            int numberOfObjects = Random.Range(0, itemsList.Length);
-            GameObject cloud = Instantiate(itemsList[numberOfObjects], pos, Quaternion.identity);
+            int numberOfObjects = Random.Range(0, objectList.Length);
+            GameObject obj = Instantiate(objectList[numberOfObjects], pos, Quaternion.identity);
             isSpawning = false;
         }
-
-        private Vector3 GetRandomPosition()
+        
+        public Vector3 GetRandomPosition()
         {
+            
             Bounds bounds = spawnBoundary.bounds;
             float yPos = UnityEngine.Random.Range(bounds.min.y, bounds.max.y);
+            float xPos = UnityEngine.Random.Range(bounds.min.x, bounds.max.x);
 
-            return new Vector3(transform.position.x , yPos, 0f);
+            return new Vector3(xPos, yPos, 0);
         }
     }
 }

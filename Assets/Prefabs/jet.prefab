@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3204861962929062784}
   - component: {fileID: 5589367316268012407}
   - component: {fileID: 4497031252183645718}
-  - component: {fileID: 4338211531969613437}
+  - component: {fileID: 4764554560278232640}
   m_Layer: 0
   m_Name: jet
   m_TagString: Jet
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.5498838, y: 4.8613873}
   m_EdgeRadius: 0
---- !u!114 &4338211531969613437
+--- !u!114 &4764554560278232640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5054651140117810517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22cc376f4846bd14b9e29478fe1a0c8f, type: 3}
+  m_Script: {fileID: 11500000, guid: f198f4777c8fcf945b627cd3cf11abbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+  moveRight: {x: 10, y: 0, z: 0}
+  destroyPosition: {x: 10, y: 0, z: 0}
