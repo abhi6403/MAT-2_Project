@@ -15,18 +15,25 @@ namespace InfinityJumper.Game
 
         bool isSpawning = false;
 
+        private float lastSpawnTime;
+
         private void Update()
         {
             if (!isSpawning)
             {
-                isSpawning = true;
-                StartCoroutine(SpawnItem(UnityEngine.Random.Range(minSpawnTime,maxSpawnTime)));
+                float waitTime = Random.Range(minSpawnTime, maxSpawnTime);
+                
+                if (Time.time >= lastSpawnTime + waitTime)
+                {
+                    isSpawning = true;
+                    SpawnItem();
+                    lastSpawnTime = Time.time;
+                }
             }
         }
 
-        IEnumerator SpawnItem(float seconds)
+        private void SpawnItem()
         {
-            yield return new WaitForSeconds(seconds);
             Vector3 pos = GetRandomPosition();
 
             int numberOfObjects = Random.Range(0, objectList.Length);
