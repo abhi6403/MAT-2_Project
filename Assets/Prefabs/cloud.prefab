@@ -145,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26df0be174a2eda4680f880220369ccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
   cloudTrigger: {fileID: 7301554268572823052}
 --- !u!61 &7301554268572823052
 BoxCollider2D:
@@ -205,5 +204,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 2
-  moveRight: {x: -1, y: -9, z: 0}
+  moveDirection: {x: 0, y: -9, z: 0}
   destroyPosition: {x: 0, y: -9, z: 0}
